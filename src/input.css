@@ -1,0 +1,55 @@
+#input,
+#underline {
+	width: 40vw;
+	font-size: 1.3vw;
+	position: absolute;
+	top: 12vh;
+	left: 12vw;
+	cursor: text;
+	line-height: 2.5vw;
+	min-height: 82vh;
+	padding-bottom: 3vh;
+	transition: 0.25s;
+	z-index: 1;
+}
+
+#underline {
+	color: var(--background);
+	z-index: -1;
+}
+
+.underline {
+	display: inline-block;
+	position: relative;
+}
+
+.underline::after {
+	content: "";
+	position: absolute;
+	width: 100%;
+	transform: scaleX(0);
+	height: 0.15vw;
+	bottom: 0.15vw;
+	left: 0;
+	background-color: #0087ca;
+	transform-origin: bottom left;
+	animation: underline 0.5s forwards 0.5s;
+}
+
+@keyframes underline {
+	from {
+		transform: scaleX(0);
+	}
+	to {
+		transform: scaleX(1);
+	}
+}
+
+:focus {
+	outline: none;
+}
+
+[placeholder]:empty::before {
+	content: attr(placeholder);
+	color: #6d758d;
+}

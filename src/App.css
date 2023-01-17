@@ -1,38 +1,102 @@
-.App {
-  text-align: center;
+#title {
+	opacity: 0.5;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+#title,
+#suggestions {
+	font-size: 1.3vw;
+	width: 30vw;
+	font-weight: 700;
+	position: absolute;
+	top: 5.5vh;
+	left: 11.5vw;
+	padding: 1vh;
+	transition: 0.25s;
+	margin: 0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+#title:hover {
+	background: rgba(0, 0, 0, 0.06);
+	border-radius: 0.5vw;
+	cursor: pointer;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+#amt {
+	color: var(--background);
+	font-size: 0.9vw;
+	font-weight: 700;
+	padding: 0.3vw 0.6vw;
+	background: #0087ca;
+	position: absolute;
+	top: 6.4vh;
+	left: 60vw;
+	border-radius: 0.8vw;
+	transition: 0.25s;
 }
 
-.App-link {
-  color: #61dafb;
+#suggestions {
+	left: 62vw;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.suggestion {
+	height: 6vw;
+	width: 26.5vw;
+	background: #f0f0f0;
+	position: relative;
+	top: 10vh;
+	left: 59vw;
+	box-shadow: 0 0 0.5vw rgb(0 0 0 / 10%);
+	border-radius: 0.5vw;
+	margin-bottom: 5vh;
+	opacity: 0;
+	animation: appear 1s forwards 0.5s;
+}
+
+@keyframes appear {
+	from {
+		top: 0;
+		opacity: 0;
+	}
+	to {
+		top: 15vh;
+		opacity: 1;
+	}
+}
+
+.circle {
+	width: 0.5vw;
+	height: 0.5vw;
+	background: #0087ca;
+	position: absolute;
+	top: 1.7vw;
+	left: 1.7vw;
+	border-radius: 0.25vw;
+}
+
+.issue {
+	width: 10vw;
+	font-size: 1vw;
+	font-weight: 200;
+	position: absolute;
+	left: 1.5vw;
+	top: -0.35vw;
+	opacity: 0.5;
+}
+
+.word {
+	width: 10vw;
+	font-size: 1.25vw;
+	font-weight: 300;
+	position: absolute;
+	left: 8.3vw;
+	top: -0.5vw;
+	text-decoration: line-through 0.1vw red;
+}
+
+.desc {
+	width: 25vw;
+	font-size: 1vw;
+	position: absolute;
+	left: 0vw;
+	top: 1.8vw;
 }
